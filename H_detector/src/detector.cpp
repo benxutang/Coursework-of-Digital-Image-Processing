@@ -24,6 +24,7 @@ public:
     {
         static int count = 0;
         static vector<Point2f> Angle;
+        static vector<double> Depth;
         static clock_t begin;
         static bool checkonce = true;
         static double angle1 = 0, angle2 = 0;
@@ -31,6 +32,7 @@ public:
         static double duration;
         static int centerIdx;
         static double depth_data;
+        static double depth_data_avg;
 
         cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(msg1, sensor_msgs::image_encodings::BGR8);
         Mat frame_left = cv_ptr->image;
@@ -61,7 +63,12 @@ public:
 
             centerIdx = rect.x + msg2->width * rect.y;
             depth_data = depths[centerIdx];
-            cout<<rect.x<<"  "<<rect.y<<"  "<<depth_data<<endl;
+            if (depth_data < _MAX_DEPTH_DATA)
+            {
+                //cout<<rect.x<<"  "<<rect.y<<"  "<<depth_data<<endl;
+                Depth.push_back(sqrt(depth_data*depth_data - _CAM_HIGHT*_CAM_HIGHT));
+            }
+
             waitKey(2);
             count++;
         }
@@ -76,23 +83,28 @@ public:
                     angle1 += Angle[i].x / Angle.size();
                     angle2 += Angle[i].y / Angle.size();
                 }
+
+                for(size_t i = 0; i < Depth.size(); i++)
+                {
+                    depth_data_avg = Depth[i]/Depth.size();
+                }
                 begin = clock();
-                cout << angle1 << "  " << angle2 << endl;
+                cout << angle1 << "  " << angle2 << endl<<depth_data_avg<<endl;
                 checkonce = false;
             }
 
             runtime = clock();
             duration = (double)(runtime - begin) / CLOCKS_PER_SEC;
             geometry_msgs::Twist cmd_red;
-            cout<<depth_data<<endl;
-            if(duration <= (depth_data/LINEAR_X/10))
+
+            if(duration <= (depth_data_avg/LINEAR_X/10))
             {
                 cmd_red.linear.x = LINEAR_X;
                 cmd_red.angular.z = 0;
                 pub.publish(cmd_red);
             }
 
-            else if ((depth_data/LINEAR_X/10) < duration && duration <= ((depth_data/LINEAR_X/10) + (180 + angle1) * 25 / 3600))
+            else if ((depth_data_avg/LINEAR_X/10) < duration && duration <= ((depth_data_avg/LINEAR_X/10) + (180 + angle1) * 25 / 3600))
             {
                 //cout<<angle1<<endl;
                 cmd_red.linear.x = 0;
