@@ -4,11 +4,10 @@ using namespace cv;
 using namespace std;
 
 
-void DetectH(Mat& frame, int h_min, int h_max, bool _side_flag, int& hough_thresh)
+void DetectH(Mat& frame, int h_min, int h_max, bool _side_flag,
+        int& hough_thresh, Rect& rect, vector<double>& LineScope)
 {
     bool flag;
-
-    Rect rect;
     Mat gray;
     Mat cannyEdge;
 
@@ -70,14 +69,7 @@ void DetectH(Mat& frame, int h_min, int h_max, bool _side_flag, int& hough_thres
 
     if(!lines.empty())
     {
-        vector<double> LineScope;
         GetLinesScope(lines, LineScope);
-        //cout<<LineScope.size()<<endl;
-        cout<<"\n"<<"*********************"<<endl;
-        for(size_t i=0; i<LineScope.size(); i++)
-        {
-            cout<<LineScope[i]<<endl;
-        }
     }
 
 //    //Detect Intersections
@@ -112,11 +104,11 @@ void DetectH(Mat& frame, int h_min, int h_max, bool _side_flag, int& hough_thres
 
     if(_side_flag == 0)
     {
-        imshow("Left frame", frame);
-        imshow("Left thresholding", gray);
-        imshow("Left Canny", cannyEdge);
+        //imshow("Left frame", frame);
+        //imshow("Left thresholding", gray);
+        //imshow("Left Canny", cannyEdge);
         imshow("Left HoughLine", HoughLine);
-        //cvMoveWindow("Hough Line Detected",200,200);
+        cvMoveWindow("Hough Line Detected",200,200);
     }
     else if(_side_flag == 1)
     {
@@ -303,6 +295,8 @@ void ColorSeg(Mat src, Mat& frame_threshold, Rect& rect, int h_min, int h_max)
 
     //矩形框
     rectangle(frame,rect, Scalar(0,255,0),2);
+    imshow("Frame", frame);
+    cvMoveWindow("Frame",800,200);
 }
 
 void LineThresh(vector<Vec2f>& lines)
@@ -405,7 +399,7 @@ void GetLinesScope(const vector<Vec4i>& lines, vector<double>& Scope)
             }
         }
 
-        if (Scope.size() > 2)//剔除一圈后如何直线的数量大于6，则改变A和B，继续删除相似的直线
+        if (Scope.size() > 2)//继续删除相似的
         {
             _scope_cons = _scope_cons + 1;
 
@@ -414,4 +408,22 @@ void GetLinesScope(const vector<Vec4i>& lines, vector<double>& Scope)
             break;
         }
     }
+}
+
+void SwapVector2(vector<double>& Vector)
+{
+    if(Vector[0]>Vector[1])
+    {
+        double swap;
+        swap = Vector[1];
+        Vector[1] = Vector[0];
+        Vector[0] = swap;
+    }
+    else;
+
+//    cout<<"\n"<<"*********************"<<endl;
+//    for(size_t i=0; i<Vector.size(); i++)
+//    {
+//        cout<<Vector[i]<<endl;
+//    }
 }
