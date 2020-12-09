@@ -1,4 +1,5 @@
 # Coursework-of-Digital-Image-Processing
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Generic badge](https://img.shields.io/badge/version-v3.3.1-blue.svg)](https://shields.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
 
 Coursework of Digital Image Processing
