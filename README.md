@@ -1,4 +1,4 @@
 # Coursework-of-Digital-Image-Processing
-[![MIT License][license-badge]](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Coursework of Digital Image Processing
