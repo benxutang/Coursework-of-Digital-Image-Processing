@@ -39,8 +39,8 @@
 #define H_MAX_RIGHT 90
 #define HOUGH_THRESH_INIT 8
 #define ANG_RUNTIME 10
-#define _MAX_DEPTH_DATA 10
-#define _CAM_HIGHT 0.5
+#define _MAX_DEPTH_DATA 5
+#define _CAM_HIGHT 0.15
 
 using namespace cv;
 using namespace std;
