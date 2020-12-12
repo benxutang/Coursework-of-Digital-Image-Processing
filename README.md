@@ -3,3 +3,45 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
 
 Coursework of Digital Image Processing
+
+# Pre-required package
+- [darknet](https://github.com/pjreddie/darknet)
+
+# Installation
+## Install darknet
+```
+git clone https://github.com/pjreddie/darknet.git
+cd darknet
+make
+```
+- Darknet installation: https://pjreddie.com/darknet/install/
+- Darknet introduction: https://pjreddie.com/darknet/yolo/
+
+## Install "H" detecting package
+- Create catkin workspace
+```
+mkdir -p ./ImageProcessing_ws/src
+cd ./ImageProcessing_ws/src
+```
+```
+git clone https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing
+```
+- Make catkin package
+```
+catkin_make
+source ./devel/setup.sh
+```
+Basic ROS package usage please refer to [ROS Wiki](http://wiki.ros.org/ROS/Tutorials)
+
+# Run ROS node
+Starting ROS
+```
+roscore
+```
+Run the following ROS nodes in new terminals
+```
+rosrun 
+```
+Or use ROS launch
+
+# Packages
