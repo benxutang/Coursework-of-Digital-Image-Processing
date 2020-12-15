@@ -45,6 +45,8 @@ roslaunch zed_wrapper zed.launch
 roslaunch dashgo_driver driver.launch
 rosrun test detector
 ```
+![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/Frame_1.png)
+![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/Left%20HoughLine_1.png)
 
 ## Detection based on YOLO V3
 Run the following ROS nodes in new terminals
@@ -54,11 +56,18 @@ roslaunch dashgo_driver driver.launch
 roslaunch darknet_ros darknet_ros.launch
 rosrun machinevision subscriber
 ```
+
   > Note:
     You have to `source` after opening new terminals.
 ```
 source ./devel/setup.sh
 ```
+Detection of the "H" blocked by a traffic cone    
+![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/YOLO%20V3_6.png)
+Detection of the "part of H"
+![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/YOLO%20V3_3.png)
+
+> Note: I just use the label "person" to represent the "H". Anyway, it doesn't matter.
 
 # Reference
 ## YOLO V3
