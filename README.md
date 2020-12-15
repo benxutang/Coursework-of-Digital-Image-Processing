@@ -38,11 +38,27 @@ Starting ROS
 ```
 roscore
 ```
+## Detection based on basic Image Processing
 Run the following ROS nodes in new terminals
 ```
-rosrun 
+roslaunch zed_wrapper zed.launch
+roslaunch dashgo_driver driver.launch
+rosrun test detector
 ```
-Or use ROS launch
+
+## Detection based on YOLO V3
+Run the following ROS nodes in new terminals
+```
+roslaunch zed_wrapper zed.launch
+roslaunch dashgo_driver driver.launch
+roslaunch darknet_ros darknet_ros.launch
+rosrun machinevision subscriber
+```
+  > Note:
+    You have to `source` after opening new terminals.
+```
+source ./devel/setup.sh
+```
 
 # Reference
 ## YOLO V3
