@@ -64,7 +64,9 @@ source ./devel/setup.sh
 ```
 Detection of the "H" blocked by a traffic cone    
 ![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/YOLO%20V3_6.png)
+
 Detection of the "part of H"
+
 ![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/YOLO%20V3_3.png)
 
 > Note: I just use the label "person" to represent the "H". Anyway, it doesn't matter.
