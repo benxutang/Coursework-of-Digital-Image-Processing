@@ -188,7 +188,7 @@ public:
 int main(int argc, char **argv)
 {
     ROS_WARN("*****START*****");
-    ros::init(argc, argv, "trafficLaneTrack");
+    ros::init(argc, argv, "Detector");
     SubscribeAndPublish sub_and_pub;
     return 0;
 }
