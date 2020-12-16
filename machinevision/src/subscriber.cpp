@@ -137,7 +137,7 @@ public:
 
 int main(int argc, char **argv){
   ROS_WARN("*****START*****");
-  ros::init(argc, argv, "machinevision");
+  ros::init(argc, argv, "ComputerVision");
   SubscribeAndPublish sub_and_pub;
   return 0;
 }
