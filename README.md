@@ -80,8 +80,8 @@ YOLO is a real-time object detection system. Please refer to YOLO Website: https
 `darknet_ros`
 Please refer to the README.md on [GitHub](https://github.com/leggedrobotics/darknet_ros)
 ## ZED Depth Camera
-Documentation: https://www.stereolabs.com/docs/
-ZED Node and published topic: https://www.stereolabs.com/docs/ros/zed-node/
+- Documentation: https://www.stereolabs.com/docs/
+- ZED Node and published topic: https://www.stereolabs.com/docs/ros/zed-node/
 
 ## Others
 Basic Image Processing algorithm. 
