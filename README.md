@@ -28,13 +28,13 @@ git clone https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing
 ```
 - Make catkin package
 ```
+cd ..
 catkin_make
 source ./devel/setup.sh
 ```
-Basic ROS package usage please refer to [ROS Wiki](http://wiki.ros.org/ROS/Tutorials)
 
 # Run ROS node
-Starting ROS
+Starting ROS core
 ```
 roscore
 ```
@@ -57,11 +57,6 @@ roslaunch darknet_ros darknet_ros.launch
 rosrun machinevision subscriber
 ```
 
-  > Note:
-    You have to `source` after opening new terminals.
-```
-source ./devel/setup.sh
-```
 Detection of the "H" blocked by a traffic cone    
 ![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/YOLO%20V3_6.png)
 
@@ -84,7 +79,7 @@ Please refer to the README.md on [GitHub](https://github.com/leggedrobotics/dark
 - ZED Node and published topic: https://www.stereolabs.com/docs/ros/zed-node/
 
 ## Others
-Basic Image Processing algorithm. 
+Algorithms below are applied. 
 - Basic spacial and point processing: Threshloding, Guassian Filtering
 - Image Segmentation: Hough Transform, Canny Operator
 - Color Image Processing
