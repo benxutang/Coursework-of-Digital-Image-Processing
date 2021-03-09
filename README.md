@@ -17,7 +17,7 @@ make
 - Darknet installation: https://pjreddie.com/darknet/install/
 - Darknet introduction: https://pjreddie.com/darknet/yolo/
 
-## Install "H" detecting package
+## Install my marker "H" detection package
 - Create catkin workspace
 ```
 mkdir -p ./ImageProcessing_ws/src
