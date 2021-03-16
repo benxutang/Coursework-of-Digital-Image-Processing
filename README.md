@@ -9,6 +9,7 @@ Coursework of Digital Image Processing
 
 # Installation
 ## Install darknet
+Darknet is required for training
 ```
 git clone https://github.com/pjreddie/darknet.git
 cd darknet
