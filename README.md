@@ -45,7 +45,9 @@ roslaunch zed_wrapper zed.launch
 roslaunch dashgo_driver driver.launch
 rosrun test detector
 ```
+- Generate the bounding box after thresholding in HSV Space
 ![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/Frame_1.png)
+- Use Canny Operator and Hough Transform to detect the orientation of the marker "H"
 ![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/Left%20HoughLine_1.png)
 
 ## Detection based on YOLO V3
@@ -66,7 +68,7 @@ rosrun machinevision subscriber
 
 ![](https://github.com/TANGBEN7/Coursework-of-Digital-Image-Processing/blob/main/assets/img/YOLO%20V3_3.png)
 
-> 由于当时做课设的时间紧迫，我们就直接用了"person"这个label去代表检测到的"H"标志，所以上面检测出来的“H”都是“person”的标签
+> 由于当时做课设的时间紧迫，我们就直接用了"person"这个label去代表检测到的"H"标志，所以上面检测出来的“H”都是“person”的标签，本质上并没有影响。
 
 # Reference
 ## YOLO V3
